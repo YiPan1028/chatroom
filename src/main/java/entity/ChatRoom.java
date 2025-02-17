@@ -10,20 +10,14 @@ public class ChatRoom {
     // 构造方法
     public ChatRoom(String name, List<String> members, boolean isGroupChat, String createdBy) {
         this.id = UUID.randomUUID().toString(); // 生成唯一 ID
-        this.name = (isGroupChat && name == null) ? "群聊-" + System.currentTimeMillis() : name;
         this.members = new ArrayList<>(members); // 复制成员列表
-        this.isGroupChat = isGroupChat;
-        this.createdBy = createdBy;
-        this.createdAt = System.currentTimeMillis(); // 记录创建时间
+        this.messages = new ArrayList<>();
     }
 
     // Getter 方法
     public String getId() { return id; }
-    public String getName() { return name; }
     public List<String> getMembers() { return new ArrayList<>(members); } // 防止外部修改
-    public boolean isGroupChat() { return isGroupChat; }
-    public String getCreatedBy() { return createdBy; }
-    public long getCreatedAt() { return createdAt; }
+    public List<String> getMessages() { return new ArrayList<>(messages); }
 
     // 添加成员
     public void addMember(String userId) {
@@ -44,6 +38,6 @@ public class ChatRoom {
 
     @Override
     public String toString() {
-        return (isGroupChat ? "群聊：" : "私聊：") + name + "（ID: " + id + "，成员数: " + members.size() + "）";
+        return ("ID: " + id + "，成员数: " + members.size());
     }
 }
