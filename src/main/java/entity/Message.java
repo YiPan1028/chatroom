@@ -17,6 +17,7 @@ public class Message {
         this.content = content;
         this.timestamp = LocalDateTime.now(); // 记录发送时间
         // this.isGroupMessage = isGroupMessage;
+        //
     }
 
     // Getter & Setter 方法
