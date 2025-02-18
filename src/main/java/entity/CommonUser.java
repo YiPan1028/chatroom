@@ -14,7 +14,7 @@ public class CommonUser implements User {
     public CommonUser(String name, String password) {
         this.username = name;
         this.password = password;
-        this.userID = UUID.randomUUID().toString();;
+        this.userID = UUID.randomUUID().toString();
     }
 
     @Override
