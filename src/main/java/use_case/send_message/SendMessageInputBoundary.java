@@ -1,5 +1,5 @@
 package use_case.send_message;
 
 public interface SendMessageInputBoundary {
-    void execute(SendmessageInputData sendmessageInputData);
+    void sendMessage(SendMessageInputData sendmessageInputData);
 }

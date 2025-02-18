@@ -1,3 +1,5 @@
+package entity;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -9,10 +11,10 @@ public class Message {
     private LocalDateTime timestamp; // 发送时间
 
     // 构造方法
-    public Message(String senderId, String receiverId, String content, boolean isGroupMessage) {
+    public Message(String senderId, String content) {
         this.id = UUID.randomUUID().toString(); // 生成唯一 ID
         this.senderId = senderId;
-        this.receiverId = receiverId;
+        // this.receiverId = receiverId;
         this.content = content;
         this.timestamp = LocalDateTime.now(); // 记录发送时间
     }
