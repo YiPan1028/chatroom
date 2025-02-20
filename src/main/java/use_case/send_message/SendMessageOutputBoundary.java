@@ -4,6 +4,6 @@ public interface SendMessageOutputBoundary {
 //    void presentSendMessageResponse(SendMessageResponseDTO response);
 //    void presentChatHistoryResponse(ChatHistoryResponseDTO response);
 //    void presentChatRoomResponse(ChatRoomResponseDTO response);
-    void presentMessage(SendMessageOutputData outputData);
+    void prepareSuccessView(SendMessageOutputData outputData);
 
 }

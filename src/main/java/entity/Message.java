@@ -11,7 +11,7 @@ public class Message {
     private LocalDateTime timestamp; // 发送时间
 
     // 构造方法
-    public Message(String senderId, String content) {
+    public Message(String senderId, String content, LocalDateTime timestamp) {
         this.id = UUID.randomUUID().toString(); // 生成唯一 ID
         this.senderId = senderId;
         // this.receiverId = receiverId;
