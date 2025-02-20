@@ -33,10 +33,8 @@ import use_case.logout.LogoutOutputBoundary;
 import use_case.signup.SignupInputBoundary;
 import use_case.signup.SignupInteractor;
 import use_case.signup.SignupOutputBoundary;
-import view.LoggedInView;
-import view.LoginView;
-import view.SignupView;
-import view.ViewManager;
+import interface_adapter.sendMessage.SendMessageViewModel;
+import view.*;
 
 /**
  * The AppBuilder class is responsible for putting together the pieces of
@@ -66,6 +64,9 @@ public class AppBuilder {
     private LoggedInViewModel loggedInViewModel;
     private LoggedInView loggedInView;
     private LoginView loginView;
+    private SendMessageView sendMessageView;
+    private SendMessageViewModel sendMessageViewModel;
+
 
     public AppBuilder() {
         cardPanel.setLayout(cardLayout);
@@ -75,6 +76,13 @@ public class AppBuilder {
      * Adds the Signup View to the application.
      * @return this builder
      */
+    public AppBuilder addSendMessageView() {
+        sendMessageViewModel = new SendMessageViewModel();
+        // sendMessageView = new SendMessageView(sendMessageViewModel);
+        cardPanel.add(sendMessageView, sendMessageView)
+        return this;
+    }
+
     public AppBuilder addSignupView() {
         signupViewModel = new SignupViewModel();
         signupView = new SignupView(signupViewModel);
